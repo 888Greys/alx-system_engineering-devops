@@ -1,1 +1,1 @@
-Write a script that prints “Hello, World”
+Shell I/O redirections
