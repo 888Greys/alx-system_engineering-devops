@@ -1,0 +1,10 @@
+
+#!/bin/bash
+cd -
+:wq
+
+q
+:wq
+i
+:q
+
