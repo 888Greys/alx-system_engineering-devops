@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This Bash script is designed to display an empty line once.
+
+# Using a 'for' loop that iterates once (i.e., with
+# 'i' starting at 0 and ending at 1)
+for ((i = 0 ; i < 1 ; i++)); do
+  # Printing an empty line to the standard output
+  echo ""
+done

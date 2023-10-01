@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# This Bash script is designed to display a mix of
+# "Best School," "bad luck," and "good luck."
+
+# Initializing a variable 'i' with the value 0
+i="0"
+
+# Using a 'while' loop to iterate while 'i' is less than 10
+while [ $i -lt 10 ]
+do
+  # Checking if 'i' is equal to 3
+  if (( i == 3 )); then
+    # If 'i' is equal to 3, it prints "bad luck" to the standard output
+    echo "bad luck"
+  # Checking if 'i' is equal to 7
+  elif (( i == 7 )); then
+    # If 'i' is equal to 7, it prints "good luck" to the standard output
+    echo "good luck"
+  else
+    # If 'i' is not equal to 3 or 7, it prints "Best School" to the standard output
+    echo "Best School"
+  fi
+  
+  # Incrementing the 'i' variable by 1
+  i=$((i+1))
+done
