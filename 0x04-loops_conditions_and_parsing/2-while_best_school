@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # This Bash script is designed to display
-the text "Best School" 10 times.
+# the text "Best School" 10 times.
 
 # Initializing a variable 'i' with the value 0
 i="0"
