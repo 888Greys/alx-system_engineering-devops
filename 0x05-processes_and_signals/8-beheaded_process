@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# A Bash script that forcefully terminates processes
+# whose command lines contain "7-highlander" using the SIGKILL signal.
+pkill -SIGKILL -f "7-highlander"
