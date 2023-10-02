@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Get and display the PID of the current Bash shell.
+
+# The following line prints the PID of the
+# current shell to the standard output.
+echo $$
