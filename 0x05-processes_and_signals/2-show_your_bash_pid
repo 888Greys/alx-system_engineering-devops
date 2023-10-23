@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Displays "bash" from the output of the 'ps aux' command.
-ps aux | grep "bash"
