@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This script displays "Best School " 10 times
+
+hour=0
+min=1
+
+while [ $hour -lt 13 ]; do
+  echo "Hour: $hour"
+  
+  while [ $min -lt 60 ]; do
+    echo $min
+    min=$((min+1))
+  done
+
+  min=1  # Reset minute counter
+  hour=$((hour+1))
+done
