@@ -5,4 +5,4 @@ user="ubuntu"
 server="35.174.209.193"
 
 # SSH connection using single-character flags
-ssh ubuntu@35.174.209.193 -i ~/.ssh/school
+ssh -i "$private_key" "$user"@"$server"
