@@ -1,5 +1,6 @@
 # Script to install nginx using puppet
-
+# Puppet script code
+#
 package {'nginx':
   ensure => 'present',
 }
