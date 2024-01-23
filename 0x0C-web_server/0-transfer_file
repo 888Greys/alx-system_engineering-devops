@@ -13,7 +13,7 @@ USERNAME=$3
 SSH_KEY=$4
 
 # Transfer the file using scp with strict host key checking disabled
-scp -o StrictHostKeyChecking=no -i "$SSH_KEY" "$FILE_PATH" "$USERNAME"@"$SERVER_IP":~
+scp -o StrictHostKeyChecking=no -i "$4" "$1" "$3"@"$2":~
 
 # Check the exit status of the scp command
 if [ $? -eq 0 ]; then
