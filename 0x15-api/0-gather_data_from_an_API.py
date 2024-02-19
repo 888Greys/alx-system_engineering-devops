@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 import requests
 from sys import argv
-
+"""
+APIs
+"""
 
 if __name__ == "__main__":
     _id = argv[1]
