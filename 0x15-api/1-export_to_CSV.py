@@ -18,6 +18,7 @@ def write_to_csv(_data, _id):
             csv_writer.writerow(apt)
     return
 
+
 if __name__ == "__main__":
     _id = argv[1]
 
