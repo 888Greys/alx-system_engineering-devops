@@ -1,30 +1,19 @@
 #!/usr/bin/python3
-'''
-    This module contains the function number_of_subscribers.
-'''
+"""
+This Script queries subscribers on a given Reddit subreddit.
+"""
+
 import requests
-from sys import argv
 
 
 def number_of_subscribers(subreddit):
-    '''
-        Returns the number of subscribers for a given subreddit.
-    '''
-    user_agent = {'User-Agent': 'Lizzie'}
-    url = f'https://www.reddit.com/r/{subreddit}/about.json'
-
-    try:
-        response = requests.get(url, headers=user_agent)
-        response.raise_for_status()  # Raises an HTTPError for bad responses
-        data = response.json().get('data', {})
-        subscribers = data.get('subscribers', 0)
-        print(f'Number of subscribers{subreddit} is: {subscribers}')
-    except requests.RequestException as e:
-        print(f"Error: {e}")
-
-
-if __name__ == "__main__":
-    if len(argv) != 2:
-        print("Usage: python script_name.py <subreddit>")
+    """Return the total number of subscribers on a given subreddit."""
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    headers = {"User-Agent": "Mozilla/5.0"}
+    response = requests.get(url, headers=headers, allow_redirects=False)
+    if response.status_code == 200:
+        data = response.json()
+        subscribers = data['data']['subscribers']
+        return subscribers
     else:
-        number_of_subscribers(argv[1])
+        return 0
