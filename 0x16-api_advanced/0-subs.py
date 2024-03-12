@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-    this module contains the function number_of_subscribers
+    This module contains the function number_of_subscribers.
 '''
 import requests
 from sys import argv
@@ -8,16 +8,23 @@ from sys import argv
 
 def number_of_subscribers(subreddit):
     '''
-        returns the number of subscribers for a given subreddit
+        Returns the number of subscribers for a given subreddit.
     '''
-    user = {'User-Agent': 'Lizzie'}
-    url = requests.get('https://www.reddit.com/r/{}/about.json'
-                       .format(subreddit), headers=user).json()
+    user_agent = {'User-Agent': 'Lizzie'}
+    url = f'https://www.reddit.com/r/{subreddit}/about.json'
+
     try:
-        return url.get('data').get('subscribers')
-    except Exception:
-        return 0
+        response = requests.get(url, headers=user_agent)
+        response.raise_for_status()  # Raises an HTTPError for bad responses
+        data = response.json().get('data', {})
+        subscribers = data.get('subscribers', 0)
+        print(f'Number of subscribers{subreddit} is: {subscribers}')
+    except requests.RequestException as e:
+        print(f"Error: {e}")
 
 
 if __name__ == "__main__":
-    number_of_subscribers(argv[1])
+    if len(argv) != 2:
+        print("Usage: python script_name.py <subreddit>")
+    else:
+        number_of_subscribers(argv[1])
